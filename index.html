@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urban Core AI — Intelligent AI Systems for Professional Services</title>
+  <meta name="description" content="Urban Core designs and implements AI systems for architecture, engineering, construction, and commercial real estate firms. Operational AI that actually gets adopted." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://urbancoreai.com/" />
+  <meta property="og:title" content="Urban Core AI — Operational AI for Professional Services" />
+  <meta property="og:description" content="AI systems that run the operational work your team shouldn't have to do manually. Built for AEC and CRE firms." />
+  <link rel="canonical" href="https://urbancoreai.com/" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --white: #ffffff;
+      --warm-white: #faf9f7;
+      --warm-light: #f4efe8;
+      --text: #2d3a47;
+      --text-secondary: #637380;
+      --text-light: #9aabb8;
+      --slate: #8494a3;
+      --slate-dark: #5a6b7a;
+      --taupe: #c4a882;
+      --taupe-dark: #a8896a;
+      --taupe-light: #ede5d8;
+      --border: #e5ddd4;
+      --border-light: #f0ebe3;
+      --shadow: 0 1px 3px rgba(45,58,71,0.06);
+      --shadow-md: 0 4px 20px rgba(45,58,71,0.08);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      padding: 0 60px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-text { font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+    .logo-text span { color: var(--slate); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--text);
+      color: white;
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--slate-dark); }
+
+    /* HERO */
+    .hero {
+      padding: 100px 60px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+    h1 em { font-style: italic; font-weight: 400; color: var(--slate); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 44px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--text);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: background 0.15s;
+      letter-spacing: -0.2px;
+    }
+    .btn-primary:hover { background: var(--slate-dark); }
+    .btn-outline {
+      display: inline-block;
+      color: var(--text-secondary);
+      padding: 14px 24px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: all 0.15s;
+      margin-left: 12px;
+    }
+    .btn-outline:hover { border-color: var(--slate); color: var(--text); }
+    .hero-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* SECTIONS */
+    section { padding: 96px 60px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.12;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    h2 em { font-style: italic; font-weight: 400; color: var(--slate); }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+
+    /* WHAT WE BUILD */
+    .services-bg { background: var(--warm-white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 60px;
+    }
+    .service-card {
+      background: white;
+      padding: 36px 32px;
+    }
+    .service-icon {
+      width: 40px; height: 40px;
+      background: var(--taupe-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .service-card p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
+
+    /* WHO IT'S FOR */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 60px;
+    }
+    .audience-list { list-style: none; }
+    .audience-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.92rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .audience-list li:last-child { border-bottom: none; }
+    .audience-list li::before {
+      content: "";
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--taupe);
+      flex-shrink: 0;
+    }
+    .audience-note {
+      background: var(--warm-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .audience-note h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+    .audience-note p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
+
+    /* APPROACH */
+    .approach-bg { background: var(--warm-white); }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .approach-item { }
+    .approach-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 12px;
+    }
+    .approach-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .approach-item p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+
+    /* ABOUT */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 60px;
+    }
+    .about-photo {
+      width: 160px; height: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .about-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+    .about-title { font-size: 0.85rem; color: var(--taupe-dark); font-weight: 600; margin-bottom: 20px; }
+    .about-bio { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.85; }
+    .about-bio p { margin-bottom: 14px; }
+    .about-bio p:last-child { margin-bottom: 0; }
+    .about-bio strong { color: var(--text); }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--text);
+      padding: 96px 60px;
+      text-align: center;
+    }
+    .cta-section h2 { color: white; margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-light {
+      display: inline-block;
+      background: white;
+      color: var(--text);
+      padding: 14px 32px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: background 0.15s;
+    }
+    .btn-light:hover { background: var(--warm-white); }
+    .cta-email {
+      display: block;
+      margin-top: 16px;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+    .cta-email:hover { color: rgba(255,255,255,0.7); }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    footer a { color: var(--text-light); text-decoration: none; }
+    footer a:hover { color: var(--text-secondary); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .hero, section { padding: 64px 24px; }
+      .cta-section { padding: 72px 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .approach-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-photo { width: 120px; height: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="logo-wrap">
+      <div class="logo-mark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">
+          <rect x="8" y="4" width="12" height="4" rx="2" fill="#8494a3"/>
+          <rect x="5" y="13" width="18" height="4" rx="2" fill="#8494a3"/>
+          <rect x="2" y="22" width="24" height="4" rx="2" fill="#c4a882"/>
+          <circle cx="31" cy="6" r="4" fill="#c4a882" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="logo-text">Urban Core <span>AI</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">What We Build</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#about">About</a>
+      <a href="mailto:hello@urbancoreai.com" class="nav-cta">Get In Touch</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">AI Consulting · Professional Services</div>
+    <h1>Most firms don't have a technology problem.<br/>They have a <em>systems problem.</em></h1>
+    <p class="hero-sub">
+      Urban Core designs and implements AI systems for architecture, engineering, construction, and commercial real estate firms — built around how your business actually operates, not how a vendor thinks it should.
+    </p>
+    <a href="mailto:hello@urbancoreai.com" class="btn-primary">Start a Conversation</a>
+    <a href="#services" class="btn-outline">See What We Build</a>
+    <p class="hero-note">We work with a small number of firms at a time. Engagements are by introduction or application only.</p>
+  </div>
+  <hr class="divider"/>
+
+  <!-- WHAT WE BUILD -->
+  <section class="services-bg" id="services">
+    <div class="container">
+      <div class="section-label">What We Build</div>
+      <h2>AI systems built around<br/>how your firm actually works.</h2>
+      <p class="section-desc">Not generic tools. Not dashboards that go unused. Operational systems designed around your specific workflows, relationships, and team.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📋</div>
+          <h3>BD & Pipeline Automation</h3>
+          <p>Track relationships, monitor opportunities, automate follow-up, and keep your CRM alive without manual entry. Built around how your team actually pursues work.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Pre-RFP Intelligence</h3>
+          <p>Surface commercial projects at the planning and permit stage — months before they hit a bid list — so your team can get into conversations first.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📄</div>
+          <h3>Proposal & Pursuit Systems</h3>
+          <p>Monitor RFP deadlines, track proposal status, and keep your entire team aligned on what's due, who owns it, and what's at stake.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🤝</div>
+          <h3>Relationship Intelligence</h3>
+          <p>Flag contacts going cold, surface insights from past projects, and give your team visibility into the relationships that actually win work.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <h3>Operations & Workflow</h3>
+          <p>Identify where your team loses time to tasks that shouldn't need them, then build automations that handle the repetitive work reliably.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>AI Adoption & Training</h3>
+          <p>Guide your team through what AI actually means for their daily work — practical, tool-specific, and built around the realities of professional services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section>
+    <div class="container">
+      <div class="section-label">Who We Work With</div>
+      <h2>Built for the firms where<br/><em>relationships win work.</em></h2>
+      <p class="section-desc">We specialize in professional services firms where business development is relationship-driven, projects are complex, and the people who are best at winning work are usually the worst at admin.</p>
+      <div class="audience-grid">
+        <ul class="audience-list">
+          <li>Architecture and design firms</li>
+          <li>Engineering and environmental consultancies</li>
+          <li>Construction and project management firms</li>
+          <li>Commercial real estate operators and advisors</li>
+          <li>Development and investment firms</li>
+          <li>Specialty consultancies and professional services</li>
+        </ul>
+        <div class="audience-note">
+          <h3>The right fit</h3>
+          <p>Urban Core works best with firms that are serious about operational improvement — not just exploring AI as a concept. Our engagements are intensive and hands-on. We work with a limited number of clients at any given time to ensure the quality of work we're known for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach-bg" id="approach">
+    <div class="container">
+      <div class="section-label">Our Approach</div>
+      <h2>Operational rigor.<br/>Not vendor sales pitches.</h2>
+      <p class="section-desc">The way we work is deliberately different from what most firms experience when they engage with technology consultants.</p>
+      <div class="approach-grid">
+        <div class="approach-item">
+          <div class="approach-num">01 / Understand first</div>
+          <h3>We learn your business before we recommend anything</h3>
+          <p>Every engagement starts with a deep operational review. We map how your firm actually works — not how an org chart says it does. The technology comes later.</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-num">02 / Build for adoption</div>
+          <h3>Systems that people actually use</h3>
+          <p>The most common AI failure is building something technically impressive that nobody adopts. We design around real behaviors, not ideal ones. Adoption is part of the deliverable.</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-num">03 / Focus on leverage</div>
+          <h3>Small structural changes that compound</h3>
+          <p>We don't chase the flashiest use of AI. We find the 2-3 places where better systems create the most durable improvement — better visibility, cleaner ownership, fewer single points of failure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-label">About</div>
+      <h2>Built by someone who<br/>has done the work.</h2>
+      <div class="about-inner">
+        <div class="about-photo">
+          <img src="/stephanie.jpg" alt="Stephanie Cohen" />
+        </div>
+        <div>
+          <div class="about-name">Stephanie Cohen</div>
+          <div class="about-title">Founder & Principal, Urban Core AI · Denver, CO</div>
+          <div class="about-bio">
+            <p>Urban Core was founded on a simple observation after years of working inside and alongside professional services firms: <strong>most don't have a technology problem. They have a process and signal problem.</strong></p>
+            <p>Data lives in silos. Business development is relationship-driven but poorly tracked. The tools exist — CRM, project management, marketing platforms — but they're fragmented, underused, or built without accounting for how people actually work.</p>
+            <p>I built Urban Core to close that gap — with AI and automation systems that reflect the realities of long sales cycles, complex stakeholder relationships, and the human dynamics of professional services.</p>
+            <p><strong>No generic transformation frameworks. No dashboards that look good in a demo and go unused after 90 days.</strong> Just operational leverage — the kind that compounds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container">
+      <h2>Ready to have a real conversation?</h2>
+      <p>We work with a small number of firms at a time. If you're serious about operational improvement, we'd like to hear about your situation.</p>
+      <a href="mailto:hello@urbancoreai.com" class="btn-light">Get In Touch</a>
+      <a href="mailto:hello@urbancoreai.com" class="cta-email">hello@urbancoreai.com</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Urban Core AI · Denver, CO</span>
+    <span><a href="mailto:hello@urbancoreai.com">hello@urbancoreai.com</a></span>
+  </footer>
+
+</body>
+</html>
