@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Confirmed — Upstream BD</title>
+  <meta name="description" content="Your payment has been received. Welcome to Upstream BD."/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0a0f;--bg2:#111118;--bg3:#16161f;--border:rgba(255,255,255,0.08);--accent:#4f6ef7;--accent2:#7c9fff;--text:#f0f0f5;--muted:#8888a0;--green:#22c55e}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid var(--border);background:rgba(10,10,15,0.95);backdrop-filter:blur(12px)}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:36px}
+    .logo-text{font-size:17px;font-weight:700;letter-spacing:-.3px}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px}
+    .card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:64px 56px;max-width:600px;width:100%;text-align:center}
+    .check-wrap{width:80px;height:80px;border-radius:50%;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);display:flex;align-items:center;justify-content:center;margin:0 auto 32px}
+    .check-wrap svg{width:36px;height:36px;color:var(--green)}
+    .badge{display:inline-block;background:rgba(34,197,94,0.10);border:1px solid rgba(34,197,94,0.25);color:var(--green);font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:20px;letter-spacing:.5px;text-transform:uppercase}
+    h1{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px}
+    .sub{font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:40px;max-width:440px;margin-left:auto;margin-right:auto}
+    .steps{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:28px 32px;text-align:left;margin-bottom:36px}
+    .steps-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);margin-bottom:18px}
+    .step{display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)}
+    .step:last-child{border-bottom:none;padding-bottom:0}
+    .step:first-of-type{padding-top:0}
+    .step-num{width:26px;height:26px;border-radius:50%;background:rgba(79,110,247,0.15);border:1px solid rgba(79,110,247,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--accent2);flex-shrink:0;margin-top:1px}
+    .step-text strong{display:block;font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+    .step-text span{font-size:13px;color:var(--muted)}
+    .contact-note{font-size:14px;color:var(--muted);margin-bottom:32px}
+    .contact-note a{color:var(--accent2);text-decoration:none;font-weight:500}
+    .contact-note a:hover{text-decoration:underline}
+    a.btn-home{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(79,110,247,.25)}
+    a.btn-home:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(79,110,247,.4)}
+    footer{text-align:center;padding:24px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+    footer a{color:var(--muted);text-decoration:none}
+    footer a:hover{color:var(--text)}
+    @media(max-width:600px){nav{padding:16px 20px}.card{padding:40px 24px}.steps{padding:20px}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <img src="/logo.svg" alt="Upstream BD"/>
+    <span class="logo-text">Upstream BD</span>
+  </div>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="check-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <div class="badge">Payment Confirmed</div>
+    <h1>You're all set.</h1>
+    <p class="sub">Your payment has been received. Stephanie will be in touch within one business day to kick things off.</p>
+
+    <div class="steps">
+      <div class="steps-label">What happens next</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Expect an email within 24 hours</strong>
+          <span>Stephanie will reach out to confirm details and schedule your kickoff.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Kickoff call</strong>
+          <span>Walk through your current BD workflow, tools, and goals so the system is built for your firm.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Build &amp; delivery</strong>
+          <span>Your AI-powered BD system is built, tested, and handed off with a full training walkthrough.</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="contact-note">Questions? Email <a href="mailto:stephanie@urbancoreai.com">stephanie@urbancoreai.com</a></p>
+    <a href="/" class="btn-home">Back to Upstream BD</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 <a href="/">Upstream BD</a> — Urban Core AI LLC</p>
+</footer>
+
+</body>
+</html>
