@@ -3,14 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Urban Core AI — Intelligent AI Systems for Professional Services</title>
-  <meta name="description" content="Urban Core designs and implements AI systems for architecture, engineering, construction, and commercial real estate firms. Operational AI that actually gets adopted." />
+  <title>AI Consulting for AEC &amp; CRE | Urban Core AI Consulting</title>
+  <meta name="description" content="Practical AI implementation for AEC and commercial real estate teams. Improve business development, relationship tracking and everyday operations." />
   <meta name='impact-site-verification' value='8dbac28a-1213-4f19-931e-b0a3e79b638d' />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://urbancoreai.com/" />
-  <meta property="og:title" content="Urban Core AI — Operational AI for Professional Services" />
-  <meta property="og:description" content="AI systems that run the operational work your team shouldn't have to do manually. Built for AEC and CRE firms." />
-  <link rel="canonical" href="https://urbancoreai.com/" />
+  <meta property="og:url" content="https://www.urbancoreai.com/" />
+  <meta property="og:site_name" content="Urban Core AI Consulting" />
+  <meta property="og:title" content="AI Consulting for AEC &amp; CRE | Urban Core AI Consulting" />
+  <meta property="og:description" content="Practical AI implementation for AEC and commercial real estate teams. Improve business development, relationship tracking and everyday operations." />
+  <meta property="og:image" content="https://www.urbancoreai.com/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Consulting for AEC &amp; CRE | Urban Core AI Consulting" />
+  <meta name="twitter:description" content="Practical AI implementation for AEC and commercial real estate teams." />
+  <meta name="twitter:image" content="https://www.urbancoreai.com/social-card.png" />
+  <link rel="canonical" href="https://www.urbancoreai.com/" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,7 +94,27 @@
       font-weight: 600;
       transition: background 0.15s;
     }
-    .nav-cta:hover { background: var(--slate-dark); }
+    .nav-links a.nav-cta { color: #fff; }
+    .nav-links a.nav-cta:hover { background: var(--slate-dark); color: #fff; }
+    .nav-links a { color: var(--text-secondary); }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      width: 44px; height: 44px;
+      cursor: pointer;
+      align-items: center; justify-content: center;
+      color: var(--text);
+    }
+    .nav-toggle svg { width: 22px; height: 22px; }
+    .skip-link {
+      position: absolute; left: -999px; top: 8px;
+      background: var(--text); color: #fff; padding: 10px 16px; border-radius: 6px; z-index: 200;
+      text-decoration: none; font-size: 0.88rem;
+    }
+    .skip-link:focus { left: 8px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--taupe-dark); outline-offset: 3px; }
 
     /* HERO */
     .hero {
@@ -187,7 +218,7 @@
     .services-bg { background: var(--warm-white); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2px;
       background: var(--border);
       border-radius: 12px;
@@ -208,6 +239,11 @@
     }
     .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
     .service-card p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
+    .service-card .lane-intro { font-size: 0.92rem; margin-bottom: 18px; }
+    .lane-list { list-style: none; }
+    .lane-list li { padding: 12px 0; border-top: 1px solid var(--border-light); font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
+    .lane-list li strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 0.9rem; }
+    .lane-note { margin-top: 28px; font-size: 0.9rem; color: var(--text-secondary); max-width: 640px; }
 
     /* WHO IT'S FOR */
     .audience-grid {
@@ -310,11 +346,11 @@
     .cta-email {
       display: block;
       margin-top: 16px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.7);
       font-size: 0.82rem;
       text-decoration: none;
     }
-    .cta-email:hover { color: rgba(255,255,255,0.7); }
+    .cta-email:hover { color: rgba(255,255,255,0.85); }
     .cta-locations {
       margin-top: 20px;
       color: rgba(255,255,255,0.55);
@@ -336,8 +372,13 @@
     footer a:hover { color: var(--text-secondary); }
 
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
+      nav { padding: 0 24px; flex-wrap: wrap; height: auto; min-height: 72px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 4px; padding: 8px 0 20px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 4px; font-size: 1rem; }
+      .nav-links a.nav-cta { text-align: center; margin-top: 8px; padding: 14px 20px; }
+      nav .logo-wrap { min-height: 72px; }
       .hero, section { padding: 64px 24px; }
       .cta-section { padding: 72px 24px; }
       footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
@@ -345,74 +386,71 @@
       .approach-grid { grid-template-columns: 1fr; gap: 32px; }
       .about-inner { grid-template-columns: 1fr; }
       .about-photo { width: 120px; height: 150px; }
+      .btn-outline { margin-left: 0; margin-top: 12px; }
     }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav>
+  <nav aria-label="Main">
     <a href="/" class="logo-wrap">
-      <img src="/urbancore-logo.png" alt="Urban Core AI" style="height:44px;width:auto;"/>
+      <img src="/urbancore-logo.png" alt="Urban Core AI Consulting" style="height:44px;width:auto;"/>
     </a>
-    <div class="nav-links">
-      <a href="#services">What We Build</a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#services">What We Do</a>
       <a href="#approach">Our Approach</a>
       <a href="#about">About</a>
       <a href="mailto:hello@urbancoreai.com" class="nav-cta">Get In Touch</a>
     </div>
   </nav>
 
+  <main id="main">
+
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-label">AI Consulting · Professional Services</div>
-    <h1>Most firms don't have a technology problem.<br/>They have a <em>systems problem.</em></h1>
+    <div class="hero-label">AI implementation for AEC + commercial real estate</div>
+    <h1>Practical AI for <em>business development and operations.</em></h1>
     <p class="hero-sub">
-      Urban Core designs and implements AI systems for architecture, engineering, construction, and commercial real estate firms — built around how your business actually operates, not how a vendor thinks it should.
+      Urban Core AI Consulting designs and implements AI systems for architecture, engineering, construction and commercial real estate teams. We help you track opportunities and relationships, support pursuits, and reduce repetitive operational work. We start with how your team works today, then build workflows people can use.
     </p>
-    <a href="mailto:hello@urbancoreai.com" class="btn-primary">Start a Conversation</a>
-    <a href="#services" class="btn-outline">See What We Build</a>
-    <p class="hero-note">We work with a small number of firms at a time. Engagements are by introduction or application only.</p>
+    <a href="mailto:hello@urbancoreai.com" class="btn-primary">Tell us what your team needs</a>
+    <a href="#services" class="btn-outline">Explore our work</a>
+    <p class="hero-note">We work with a small number of firms at a time. Start by telling us where your team is losing time or missing opportunities.</p>
   </div>
   <hr class="divider"/>
 
-  <!-- WHAT WE BUILD -->
+  <!-- WHAT WE DO -->
   <section class="services-bg" id="services">
     <div class="container">
-      <div class="section-label">What We Build</div>
-      <h2>AI systems built around<br/>how your firm actually works.</h2>
-      <p class="section-desc">Not generic tools. Not dashboards that go unused. Operational systems designed around your specific workflows, relationships, and team.</p>
+      <div class="section-label">What We Do</div>
+      <h2>Two kinds of work.<br/>One practical approach.</h2>
+      <p class="section-desc">We build AI-assisted workflows for business development and for day-to-day operations, with clear review steps so your team stays in charge.</p>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">📋</div>
-          <h3>BD & Pipeline Automation</h3>
-          <p>Track relationships, monitor opportunities, automate follow-up, and keep your CRM alive without manual entry. Built around how your team actually pursues work.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🔍</div>
-          <h3>Pre-RFP Intelligence</h3>
-          <p>Surface commercial projects at the planning and permit stage — months before they hit a bid list — so your team can get into conversations first.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📄</div>
-          <h3>Proposal & Pursuit Systems</h3>
-          <p>Monitor RFP deadlines, track proposal status, and keep your entire team aligned on what's due, who owns it, and what's at stake.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🤝</div>
-          <h3>Relationship Intelligence</h3>
-          <p>Flag contacts going cold, surface insights from past projects, and give your team visibility into the relationships that actually win work.</p>
+          <h3>Business development</h3>
+          <p class="lane-intro">Keep opportunities, relationships and pursuits easier to manage. We build AI-assisted workflows for research, relationship tracking, proposal coordination and follow-up. CRM is part of the system, alongside the decisions and handoffs that help your team win work.</p>
+          <ul class="lane-list">
+            <li><strong>Opportunity research</strong>Bring planning, permit and market information into a reviewable list of potential opportunities. Your team decides which are worth pursuing.</li>
+            <li><strong>Relationships and follow-up</strong>Organize contact history, flag gaps and prepare follow-up for review. Reduce repetitive CRM updates without losing responsibility for what gets sent.</li>
+            <li><strong>Pursuits and proposals</strong>Track deadlines, responsibilities and proposal inputs in one working process, with a person accountable for the final submission.</li>
+          </ul>
         </div>
         <div class="service-card">
           <div class="service-icon">⚙️</div>
-          <h3>Operations & Workflow</h3>
-          <p>Identify where your team loses time to tasks that shouldn't need them, then build automations that handle the repetitive work reliably.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📊</div>
-          <h3>AI Adoption & Training</h3>
-          <p>Guide your team through what AI actually means for their daily work — practical, tool-specific, and built around the realities of professional services.</p>
+          <h3>Operations</h3>
+          <p class="lane-intro">Make repetitive work and handoffs easier to manage. We build workflows for recurring tasks, document handling and working knowledge, with clear review steps and ownership.</p>
+          <ul class="lane-list">
+            <li><strong>Recurring tasks</strong>Identify repeated steps that can be assisted or automated, and define when a person needs to check the result.</li>
+            <li><strong>Handoffs and documentation</strong>Make responsibilities and next steps explicit so work is not trapped in an inbox or one person's head.</li>
+          </ul>
         </div>
       </div>
+      <p class="lane-note">Training and adoption support both lanes: we document each workflow, clarify ownership, and teach your team to use it.</p>
     </div>
   </section>
 
@@ -421,7 +459,7 @@
     <div class="container">
       <div class="section-label">Who We Work With</div>
       <h2>Built for the firms where<br/><em>relationships win work.</em></h2>
-      <p class="section-desc">We specialize in professional services firms where business development is relationship-driven, projects are complex, and the people who are best at winning work are usually the worst at admin.</p>
+      <p class="section-desc">We work with AEC and commercial real estate teams whose growth depends on relationships and whose projects involve many people, decisions and handoffs. Our work is a fit when a recurring business development or operations problem needs a practical system, not another unused tool.</p>
       <div class="audience-grid">
         <ul class="audience-list">
           <li>Architecture and design firms</li>
@@ -429,11 +467,10 @@
           <li>Construction and project management firms</li>
           <li>Commercial real estate operators and advisors</li>
           <li>Development and investment firms</li>
-          <li>Specialty consultancies and professional services</li>
         </ul>
         <div class="audience-note">
           <h3>The right fit</h3>
-          <p>Urban Core works best with firms that are serious about operational improvement — not just exploring AI as a concept. Our engagements are intensive and hands-on. We work with a limited number of clients at any given time to ensure the quality of work we're known for.</p>
+          <p>We work best with teams that have a specific problem to solve, not just an interest in AI as a concept. Engagements are hands-on, and we take on a limited number of clients at a time.</p>
         </div>
       </div>
     </div>
@@ -443,23 +480,23 @@
   <section class="approach-bg" id="approach">
     <div class="container">
       <div class="section-label">Our Approach</div>
-      <h2>Operational rigor.<br/>Not vendor sales pitches.</h2>
-      <p class="section-desc">The way we work is deliberately different from what most firms experience when they engage with technology consultants.</p>
+      <h2>Start with the work.<br/>Build what your team can use.</h2>
+      <p class="section-desc">Every engagement has visible steps and a clear handoff, so you know what you are getting and who owns it afterward.</p>
       <div class="approach-grid">
         <div class="approach-item">
-          <div class="approach-num">01 / Understand first</div>
-          <h3>We learn your business before we recommend anything</h3>
-          <p>Every engagement starts with a deep operational review. We map how your firm actually works — not how an org chart says it does. The technology comes later.</p>
+          <div class="approach-num">01 / Review the process</div>
+          <h3>Map the work before choosing tools</h3>
+          <p>We map the task, the tools and the people involved. Together, we choose where AI can help and where a person needs to stay responsible.</p>
         </div>
         <div class="approach-item">
-          <div class="approach-num">02 / Build for adoption</div>
-          <h3>Systems that people actually use</h3>
-          <p>The most common AI failure is building something technically impressive that nobody adopts. We design around real behaviors, not ideal ones. Adoption is part of the deliverable.</p>
+          <div class="approach-num">02 / Build and test</div>
+          <h3>A working workflow, tested with your team</h3>
+          <p>We design a working workflow around a defined use case, test it with your team and check the result before expanding it.</p>
         </div>
         <div class="approach-item">
-          <div class="approach-num">03 / Focus on leverage</div>
-          <h3>Small structural changes that compound</h3>
-          <p>We don't chase the flashiest use of AI. We find the 2-3 places where better systems create the most durable improvement — better visibility, cleaner ownership, fewer single points of failure.</p>
+          <div class="approach-num">03 / Document and train</div>
+          <h3>Ownership and practical training</h3>
+          <p>We document the workflow, clarify ownership and provide practical training so your team can use it.</p>
         </div>
       </div>
     </div>
@@ -491,22 +528,39 @@
   <!-- CTA -->
   <div class="cta-section">
     <div class="container">
-      <h2>Ready to have a real conversation?</h2>
-      <p>We work with a small number of firms at a time. If you're serious about operational improvement, we'd like to hear about your situation.</p>
-      <a href="mailto:hello@urbancoreai.com" class="btn-light">Get In Touch</a>
+      <h2>What would you like your team to do more easily?</h2>
+      <p>Tell us about your business development or operations problem, the tools you use today and what you want to change. We'll start by understanding the work.</p>
+      <a href="mailto:hello@urbancoreai.com" class="btn-light">Email the Urban Core team</a>
       <a href="mailto:hello@urbancoreai.com" class="cta-email">hello@urbancoreai.com</a>
       <div class="cta-locations">Offices in Denver, CO &nbsp;·&nbsp; Vancouver, BC</div>
     </div>
   </div>
 
+  </main>
+
   <footer>
-    <span>© 2026 Urban Core AI · Denver, CO &amp; Vancouver, BC</span>
+    <span>© 2026 Urban Core AI Consulting · Denver, CO &amp; Vancouver, BC</span>
     <span>
       <a href="mailto:hello@urbancoreai.com">hello@urbancoreai.com</a>
       &nbsp;·&nbsp;
       <a href="/outreachpolicy">Outreach Policy</a>
     </span>
   </footer>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('nav-links');
+      if (!btn || !menu) return;
+      function setOpen(open) {
+        menu.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      btn.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+      menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    })();
+  </script>
 
 </body>
 </html>
