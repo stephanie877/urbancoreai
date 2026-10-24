@@ -351,6 +351,10 @@
       text-decoration: none;
     }
     .cta-email:hover { color: rgba(255,255,255,0.85); }
+    .contact-form-wrap { max-width: 640px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; }
+    .contact-form-wrap iframe { width: 100%; min-height: 640px; border: none; display: block; }
+    .cta-alt { margin-top: 24px; margin-bottom: 0 !important; font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+    .cta-alt a { color: #fff; text-decoration: underline; }
     .cta-locations {
       margin-top: 20px;
       color: rgba(255,255,255,0.55);
@@ -528,8 +532,25 @@
     <div class="container">
       <h2>What would you like your team to do more easily?</h2>
       <p>Tell us about your business development or operations problem, the tools you use today and what you want to change. We'll start by understanding the work.</p>
-      <a href="mailto:hello@urbancoreai.com" class="btn-light">Email the Urban Core team</a>
-      <a href="mailto:hello@urbancoreai.com" class="cta-email">hello@urbancoreai.com</a>
+      <div class="contact-form-wrap">
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/0mZ7IEUZGJwRZsaBUw4y"
+          id="inline-0mZ7IEUZGJwRZsaBUw4y"
+          title="Contact Urban Core AI Consulting"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Website Contact Form"
+          data-height="640"
+          data-layout-iframe-id="inline-0mZ7IEUZGJwRZsaBUw4y"
+          data-form-id="0mZ7IEUZGJwRZsaBUw4y"
+          loading="lazy"></iframe>
+      </div>
+      <p class="cta-alt">Prefer email? <a href="mailto:hello@urbancoreai.com" class="cta-email-link">Email the Urban Core team</a> at hello@urbancoreai.com.</p>
       <div class="cta-locations">Offices in Denver, CO &nbsp;·&nbsp; Vancouver, BC</div>
     </div>
   </div>
@@ -545,6 +566,7 @@
     </span>
   </footer>
 
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <script>
     (function () {
       var btn = document.querySelector('.nav-toggle');
