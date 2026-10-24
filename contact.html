@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Urban Core AI Consulting</title>
+  <meta name="description" content="Tell Urban Core AI Consulting about your business development or operations problem. We help AEC and commercial real estate teams put AI to practical use." />
+  <link rel="canonical" href="https://www.urbancoreai.com/contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.urbancoreai.com/contact" />
+  <meta property="og:title" content="Contact | Urban Core AI Consulting" />
+  <meta property="og:description" content="Tell us about your business development or operations problem." />
+  <meta property="og:image" content="https://www.urbancoreai.com/social-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --white: #ffffff;
+      --warm-white: #faf9f7;
+      --warm-light: #f4efe8;
+      --text: #2d3a47;
+      --text-secondary: #637380;
+      --text-light: #9aabb8;
+      --slate: #8494a3;
+      --slate-dark: #5a6b7a;
+      --taupe: #c4a882;
+      --taupe-dark: #a8896a;
+      --taupe-light: #ede5d8;
+      --border: #e5ddd4;
+      --border-light: #f0ebe3;
+      --shadow: 0 1px 3px rgba(45,58,71,0.06);
+      --shadow-md: 0 4px 20px rgba(45,58,71,0.08);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      padding: 0 60px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-text { font-size: 1rem; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+    .logo-text span { color: var(--slate); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--text);
+      color: white;
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    .nav-links a.nav-cta { color: #fff; }
+    .nav-links a.nav-cta:hover { background: var(--slate-dark); color: #fff; }
+    .nav-links a { color: var(--text-secondary); }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      width: 44px; height: 44px;
+      cursor: pointer;
+      align-items: center; justify-content: center;
+      color: var(--text);
+    }
+    .nav-toggle svg { width: 22px; height: 22px; }
+    .skip-link {
+      position: absolute; left: -999px; top: 8px;
+      background: var(--text); color: #fff; padding: 10px 16px; border-radius: 6px; z-index: 200;
+      text-decoration: none; font-size: 0.88rem;
+    }
+    .skip-link:focus { left: 8px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--taupe-dark); outline-offset: 3px; }
+
+    /* HERO */
+    .hero {
+      padding: 100px 60px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--text);
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+    h1 em { font-style: italic; font-weight: 400; color: var(--slate); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 44px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--text);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: background 0.15s;
+      letter-spacing: -0.2px;
+    }
+    .btn-primary:hover { background: var(--slate-dark); }
+    .btn-outline {
+      display: inline-block;
+      color: var(--text-secondary);
+      padding: 14px 24px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: all 0.15s;
+      margin-left: 12px;
+    }
+    .btn-outline:hover { border-color: var(--slate); color: var(--text); }
+    .hero-note {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* SECTIONS */
+    section { padding: 96px 60px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.12;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    h2 em { font-style: italic; font-weight: 400; color: var(--slate); }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 60px;
+    }
+
+    /* WHAT WE BUILD */
+    .services-bg { background: var(--warm-white); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 60px;
+    }
+    .service-card {
+      background: white;
+      padding: 36px 32px;
+    }
+    .service-icon {
+      width: 40px; height: 40px;
+      background: var(--taupe-light);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .service-card p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
+    .service-card .lane-intro { font-size: 0.92rem; margin-bottom: 18px; }
+    .lane-list { list-style: none; }
+    .lane-list li { padding: 12px 0; border-top: 1px solid var(--border-light); font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
+    .lane-list li strong { color: var(--text); display: block; margin-bottom: 2px; font-size: 0.9rem; }
+    .lane-note { margin-top: 28px; font-size: 0.9rem; color: var(--text-secondary); max-width: 640px; }
+
+    /* WHO IT'S FOR */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 60px;
+    }
+    .audience-list { list-style: none; }
+    .audience-list li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.92rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .audience-list li:last-child { border-bottom: none; }
+    .audience-list li::before {
+      content: "";
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--taupe);
+      flex-shrink: 0;
+    }
+    .audience-note {
+      background: var(--warm-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .audience-note h3 { font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+    .audience-note p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; }
+
+    /* APPROACH */
+    .approach-bg { background: var(--warm-white); }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .approach-item { }
+    .approach-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--taupe-dark);
+      margin-bottom: 12px;
+    }
+    .approach-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .approach-item p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; }
+
+    /* ABOUT */
+    .about-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 60px;
+    }
+    .about-photo {
+      width: 200px; height: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      margin: 0 auto;
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .about-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+    .about-title { font-size: 0.85rem; color: var(--taupe-dark); font-weight: 600; margin-bottom: 20px; }
+    .about-bio { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.85; }
+    .about-bio p { margin-bottom: 14px; }
+    .about-bio p:last-child { margin-bottom: 0; }
+    .about-bio strong { color: var(--text); }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--text);
+      padding: 96px 60px;
+      text-align: center;
+    }
+    .cta-section h2 { color: white; margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,0.6); font-size: 1rem; margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-light {
+      display: inline-block;
+      background: white;
+      color: var(--text);
+      padding: 14px 32px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: background 0.15s;
+    }
+    .btn-light:hover { background: var(--warm-white); }
+    .cta-email {
+      display: block;
+      margin-top: 16px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+    .cta-email:hover { color: rgba(255,255,255,0.85); }
+    .contact-form-wrap { max-width: 640px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; }
+    .contact-form-wrap iframe { width: 100%; min-height: 640px; border: none; display: block; }
+    .cta-alt { margin-top: 24px; margin-bottom: 0 !important; font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+    .cta-alt a { color: #fff; text-decoration: underline; }
+    .cta-locations {
+      margin-top: 20px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+    footer a { color: var(--text-light); text-decoration: none; }
+    footer a:hover { color: var(--text-secondary); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; flex-wrap: wrap; height: auto; min-height: 72px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 4px; padding: 8px 0 20px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 4px; font-size: 1rem; }
+      .nav-links a.nav-cta { text-align: center; margin-top: 8px; padding: 14px 20px; }
+      nav .logo-wrap { min-height: 72px; }
+      .hero, section { padding: 64px 24px; }
+      .cta-section { padding: 72px 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 8px; text-align: center; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .approach-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-photo { width: 120px; height: 150px; }
+      .btn-outline { margin-left: 0; margin-top: 12px; }
+    }
+  
+    .contact-page { max-width: 720px; margin: 0 auto; padding: 72px 24px 96px; }
+    .contact-page h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 16px; letter-spacing: -1px; }
+    .contact-page .lead { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.8; margin-bottom: 36px; max-width: 560px; }
+    .contact-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); }
+    .contact-card iframe { width: 100%; min-height: 660px; border: none; display: block; }
+    .contact-alt { margin-top: 28px; font-size: 0.9rem; color: var(--text-secondary); }
+    .contact-alt a { color: var(--text); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav aria-label="Main">
+    <a href="/" class="logo-wrap">
+      <span class="logo-text" style="font-size:1.25rem;font-weight:700;letter-spacing:-0.4px;color:#2d3a47;white-space:nowrap;">Urban Core <span style="color:#8494a3;font-weight:600;">AI Consulting</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="/#services">What We Do</a>
+      <a href="/#approach">Our Approach</a>
+      <a href="/#about">About</a>
+      <a href="/contact" class="nav-cta">Get In Touch</a>
+    </div>
+  </nav>
+
+  <main id="main" class="contact-page">
+    <div class="hero-label">Contact</div>
+    <h1>What would you like your team to do more easily?</h1>
+    <p class="lead">Tell us about your business development or operations problem, the tools you use today and what you want to change. We'll start by understanding the work. We work with a small number of firms at a time.</p>
+    <div class="contact-card">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/0mZ7IEUZGJwRZsaBUw4y"
+        id="inline-0mZ7IEUZGJwRZsaBUw4y"
+        title="Contact Urban Core AI Consulting"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Website Contact Form"
+        data-height="660"
+        data-layout-iframe-id="inline-0mZ7IEUZGJwRZsaBUw4y"
+        data-form-id="0mZ7IEUZGJwRZsaBUw4y"></iframe>
+    </div>
+    <p class="contact-alt">Prefer email? Write to the Urban Core team at <a href="mailto:hello@urbancoreai.com">hello@urbancoreai.com</a>.</p>
+  </main>
+
+  <footer>
+    <span>© 2026 Urban Core AI Consulting · Denver, CO &amp; Vancouver, BC</span>
+    <span>
+      <a href="mailto:hello@urbancoreai.com">hello@urbancoreai.com</a>
+      &nbsp;·&nbsp;
+      <a href="/outreachpolicy">Outreach Policy</a>
+    </span>
+  </footer>
+
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('nav-links');
+      if (!btn || !menu) return;
+      function setOpen(open) {
+        menu.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      btn.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
+      menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    })();
+  </script>
+</body>
+</html>
