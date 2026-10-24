@@ -389,7 +389,8 @@
     .contact-page h1 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 16px; letter-spacing: -1px; }
     .contact-page .lead { color: var(--text-secondary); font-size: 1.02rem; line-height: 1.8; margin-bottom: 36px; max-width: 560px; }
     .contact-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); }
-    .contact-card iframe { width: 100%; min-height: 660px; border: none; display: block; }
+    .contact-card iframe { width: 100%; height: 780px; border: none; display: block; }
+    @media (max-width: 768px) { .contact-card iframe { height: 900px; } }
     .contact-alt { margin-top: 28px; font-size: 0.9rem; color: var(--text-secondary); }
     .contact-alt a { color: var(--text); }
   </style>
@@ -417,21 +418,7 @@
     <h1>What would you like your team to do more easily?</h1>
     <p class="lead">Tell us about your business development or operations problem, the tools you use today and what you want to change. We'll start by understanding the work. We work with a small number of firms at a time.</p>
     <div class="contact-card">
-      <iframe
-        src="https://api.leadconnectorhq.com/widget/form/0mZ7IEUZGJwRZsaBUw4y"
-        id="inline-0mZ7IEUZGJwRZsaBUw4y"
-        title="Contact Urban Core AI Consulting"
-        data-layout="{'id':'INLINE'}"
-        data-trigger-type="alwaysShow"
-        data-trigger-value=""
-        data-activation-type="alwaysActivated"
-        data-activation-value=""
-        data-deactivation-type="neverDeactivate"
-        data-deactivation-value=""
-        data-form-name="Website Contact Form"
-        data-height="660"
-        data-layout-iframe-id="inline-0mZ7IEUZGJwRZsaBUw4y"
-        data-form-id="0mZ7IEUZGJwRZsaBUw4y"></iframe>
+      <iframe src="https://api.leadconnectorhq.com/widget/form/0mZ7IEUZGJwRZsaBUw4y" title="Contact Urban Core AI Consulting" loading="lazy"></iframe>
     </div>
     <p class="contact-alt">Prefer email? Write to the Urban Core team at <a href="mailto:hello@urbancoreai.com">hello@urbancoreai.com</a>.</p>
   </main>
@@ -445,7 +432,6 @@
     </span>
   </footer>
 
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
   <script>
     (function () {
       var btn = document.querySelector('.nav-toggle');
